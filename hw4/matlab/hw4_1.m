@@ -16,10 +16,10 @@ for i=1:length(n)
     % training
     w = logistic_train(train, train_labels);
     % testing
-    y = logsig(data*w);
+    y = logsig(test*w);
     y(y>=0.5) = 1;
     y(y<0.5) = 0;
-    accuracy(i) = sum(y==labels)/length(labels);
+    accuracy(i) = sum(y==test_labels)/length(test_labels);
 end
 
 % plot accuracy
